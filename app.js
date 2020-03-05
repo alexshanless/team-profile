@@ -71,9 +71,10 @@ const eachRole = () => {
                     name: "School",
                     message: "Which school is the intern attending?"
                 }
-            ]).then(school => {
+            ]).then(university => {
 
-                school = school["Sponsoring School"];
+                school = university["School"];
+                console.log(school);
                 allRoles();
             })
 
@@ -141,7 +142,7 @@ const addEmployee = () => {
 
 const renderToFile = () => {
     fs.writeFile('./output/team.html', render(employees), 'utf8', (err) => {
-        console.log("write my damn file gil");
+
 
         if (err) {
             console.log(err);
